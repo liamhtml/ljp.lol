@@ -10,7 +10,7 @@
         let redirect = document.createElement('meta');
         redirect.httpEquiv = "Refresh";
         if (window.location.pathname.startsWith('/gh/')) {
-            redirect.content = `0; url='https://github.com/liamhtml${window.location.pathname}'`;
+            redirect.content = `0; url='https://github.com/liamhtml${window.location.pathname.substr(3)}'`;
         } else {
             redirect.content = `0; url='https://liamp.dev${window.location.pathname}'`;
         }
