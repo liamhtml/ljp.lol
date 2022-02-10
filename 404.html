@@ -9,7 +9,11 @@
     <script>
         let redirect = document.createElement('meta');
         redirect.httpEquiv = "Refresh";
-        redirect.content = `0; url='https://liamp.dev${window.location.pathname}'`;
+        if (window.location.pathname.startsWith(/gh/)) {
+            redirect.content = `0; url='https://github.com/liamhtml${window.location.pathname}'`;
+        } else {
+            redirect.content = `0; url='https://liamp.dev${window.location.pathname}'`;
+        }
         document.head.appendChild(redirect);
     </script>
 </html>
